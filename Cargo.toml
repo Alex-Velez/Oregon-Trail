@@ -1,0 +1,29 @@
+[package]
+name = "oregontrail"
+description = "Oregon Trail mini terminal game"
+version = "0.1.0"
+repository = "https://github.com/Alex-Velez/Engine"
+keywords = ["terminal", "game"]
+authors = ["Alexander Velez <alexandervelez7245@gmail.com>"]
+
+edition = "2018"
+license = "MIT"
+readme = "README.md"
+categories = ["game"]
+build = "build.rs"
+
+[dependencies]
+#crossterm = "0.21.0"
+#kira = "0.6.0" # 0.5.3
+rand = "0.8.5"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = [
+    "processenv",
+    "consoleapi",
+    "winbase",
+    "wincon",
+] }
+
+[build-dependencies]
+embed-resource = "1.4.1"
